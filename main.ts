@@ -15,10 +15,10 @@ scene.setBackgroundImage(assets.image`background for flash vs rocket`)
 myEnemy.follow(mySprite, 80)
 music.play(music.stringPlayable("C5 A B A F G C5 G ", 120), music.PlaybackMode.UntilDone)
 mySprite.setStayInScreen(true)
-if (myEnemy.overlapsWith(mySprite)) {
-    game.gameOver(false)
-}
 forever(function () {
     pause(1000)
     info.changeScoreBy(1)
+    if (myEnemy.overlapsWith(mySprite)) {
+        game.gameOver(false)
+    }
 })
